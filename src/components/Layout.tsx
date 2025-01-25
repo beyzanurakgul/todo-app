@@ -1,7 +1,12 @@
+import React, { ReactNode } from 'react';
 import Footer from './Footer';
 import pic01 from "./img/pic01.jpg";
 
-const Layout: React.FC = ({ children }) => {
+interface LayoutProps {
+  children: ReactNode; // children'ı düzgün bir şekilde tanımlıyoruz
+}
+
+const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div className="relative flex flex-col min-h-screen">
       {/* Arka plan katmanı */}
@@ -18,7 +23,6 @@ const Layout: React.FC = ({ children }) => {
       ></div>
 
       {/* İçerik katmanı */}
-
       <div className="flex flex-1 justify-center items-center">
         <main className="p-6 w-full max-w-3xl">{children}</main>
       </div>
